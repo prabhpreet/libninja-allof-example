@@ -1,0 +1,54 @@
+[package]
+name = "libninja-optional-fields-example"
+edition = "2021"
+version = "0.1.0"
+build = "build.rs"
+readme = "README.md"
+
+[dependencies]
+futures = "0.3.25"
+httpclient = "0.18.0"
+serde_json = "1.0.81"
+
+[dependencies.chrono]
+version = "0.4.26"
+features = ["serde"]
+
+[dependencies.serde]
+version = "1.0.137"
+features = ["derive"]
+
+[build-dependencies.libninja]
+git = "https://github.com/kurtbuilds/libninja.git"
+rev = "c9207298"
+features = []
+
+[build-dependencies.ln-core]
+git = "https://github.com/kurtbuilds/libninja.git"
+rev = "c9207298"
+features = []
+
+[lib]
+path = "src/lib.rs"
+name = "libninja_optional_fields_example"
+edition = "2021"
+crate-type = ["rlib"]
+required-features = []
+
+[[example]]
+path = "examples/create_pets.rs"
+name = "create_pets"
+edition = "2021"
+required-features = []
+
+[[example]]
+path = "examples/list_pets.rs"
+name = "list_pets"
+edition = "2021"
+required-features = []
+
+[[example]]
+path = "examples/show_pet_by_id.rs"
+name = "show_pet_by_id"
+edition = "2021"
+required-features = []
